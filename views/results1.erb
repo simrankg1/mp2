@@ -1,0 +1,19 @@
+
+<form action="/details/:id" method="GET">
+<% @movie_list.each do |movie| %>
+<% id= movie['imdb_ID'] %>
+<% movie_link= "<a href='/details/#{id}'> #{movie['Title']} #{movie['Year']}</a>" %>
+
+<li>
+	<%= movie_link %>
+</li>
+
+<% end %>
+</form>
+
+
+<!-- 
+
+<li> .. your content here .. </li>
+<li> <a href="..website address.."> .. your content here .. </a> </li> 
+ -->

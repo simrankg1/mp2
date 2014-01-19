@@ -1,0 +1,17 @@
+<!-- stores details of movies-->
+
+
+<% @movie_list.each do |movie| %>
+<ul>
+	<li><%= movie["Title"] %> </li>
+	<li><%= movie["Poster"] %></li>
+	<li><%= "Cast: #{movie['Actors']}" %></li>
+	<li><%= "Director: #{movie['Director']}" %></li>
+	
+	<li><%= "Genre: #{movie['Genre']}" %></li>
+	<li><%= "Rating: #{movie['Rated']}" %></li>
+	<li><%= "Released Year: #{movie['Released']}" %></li>
+	<li><%= "Runtime: #{movie['Runtime']}" %></li>
+	<li><%= "Plot: #{movie['Plot']}" %></li>
+</ul>
+<% end %>
