@@ -1,19 +1,41 @@
+<html>
+<head>
+	<title> Simran's Movie App </title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- main style sheet -->
+	<link rel="stylesheet" href="/stylesheets/movie_style.css">
+	<!-- jquery --> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>	
 
-<form action="/details/:id" method="GET">
-<% @movie_list.each do |movie| %>
-<% id= movie['imdb_ID'] %>
-<% movie_link= "<a href='/details/#{id}'> #{movie['Title']} #{movie['Year']}</a>" %>
+</head>
+<body>
 
-<li>
-	<%= movie_link %>
-</li>
+<div class="container">
+	<div class= "col-sm-6 col-sm-offset-3 content-box"> 
+		<h1> Voila! </h1>
+		<hr>
+		<p> After searching through my entire library, I've discovered these timeless gems for you. Feel free to click on a movie to learn more!</p>
 
-<% end %>
-</form>
+		<form action="/details/:id" method="GET">
+		<% @movie_list.each do |movie| %>
+			<% id= movie['imdbID'] %>
+			<% movie_link= "<a href='/details/#{id}'> #{movie['Title']} #{movie['Year']} <i class='glyphicon glyphicon-thumbs-up'></i> </a>" %>
 
+			<li>
+				<%= movie_link %>
+			</li>
+		<% end %>
+		</form>
+	</div>
 
-<!-- 
+	<div class="col-sm-6 col-sm-offset-3 content-box">
+		<p>Couldn't find the movie you were looking for? Doubtful, my library is legendary! To fix your typos and reflect on your poor life choices:</p> 
+		<a href="/" class="btn btn-info col-sm-8 col-sm-offset-2">Search Again</a>
+	</div>
+</div>
 
-<li> .. your content here .. </li>
-<li> <a href="..website address.."> .. your content here .. </a> </li> 
- -->
+</body>
+</html>

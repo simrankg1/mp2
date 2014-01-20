@@ -25,19 +25,12 @@ post '/results' do
 end
 
 
-get '/details/:id' do
-	@select_movie = JSON.parse(Typhoeus.get("www.omdbapi.com", :params => {:i => params[:id]}).body)
+get '/details/:id' do |id|
+	@select_movie = JSON.parse(Typhoeus.get("www.omdbapi.com", :params => {:i => id}).body)
 
 erb :details
 end
 
-# results: 
-# 	<%@movie_list.each do |movie| %>
-# # 		<li><%= movie["Title"] %> - <%= movie["Year"]%></li>
-
-# post '/details/:imdb' do 
-# response= Typhoeus.get("www.omdbapi.com", :params => { i: imdb_id})
-# poster_link= JSON.parse(response.body)["Poster"]
 
 
 

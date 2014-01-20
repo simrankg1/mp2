@@ -1,6 +1,30 @@
-<h1> Which movie would you like to watch? </h1>
+<html>
+<head>
+	<title> Simran's Movie App </title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- main style sheet -->
+	<link rel="stylesheet" href="/stylesheets/movie_style.css">
+	<!-- jquery --> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>	
 
-<form accept-charset="UTF-8" action="/results" method="POST" >
-<input type="text" name="movie">
-<input type="submit" name="commit" value="Voila">
-</form>
+</head>
+<body>
+<div class="container">
+	<div class= "col-sm-6 col-sm-offset-3 content-box"> 
+		<h1> Welcome to Simran's Movie App! </h1>
+		<hr>
+		<p> I don't like to brag but I have the world's largest movie library. Due to high demand from my fan club, I've built this app to help my loyal fans explore my wonderful library. To get started, simply search for any movie! </p>
+		<Br><Br>
+
+		<form accept-charset="UTF-8" action="/results" method="POST" >
+			<input type="text" name="movie" class="col-sm-8 col-sm-offset-2">
+			<Br><br>
+			<input type="submit" name="commit" value="Search Simran's Library" class="col-sm-8 col-sm-offset-2 btn btn-info">
+		</form>
+	</div>
+</div>
+</body>
+</html>

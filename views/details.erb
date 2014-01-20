@@ -1,17 +1,82 @@
 <!-- stores details of movies-->
 
+<html>
+<head>
+	<title> Simran's Movie App </title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- main style sheet -->
+	<link rel="stylesheet" href="/stylesheets/movie_style.css">
+	<!-- jquery --> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>	
+</head>
+<body>
 
-<% @movie_list.each do |movie| %>
-<ul>
-	<li><%= movie["Title"] %> </li>
-	<li><%= movie["Poster"] %></li>
-	<li><%= "Cast: #{movie['Actors']}" %></li>
-	<li><%= "Director: #{movie['Director']}" %></li>
-	
-	<li><%= "Genre: #{movie['Genre']}" %></li>
-	<li><%= "Rating: #{movie['Rated']}" %></li>
-	<li><%= "Released Year: #{movie['Released']}" %></li>
-	<li><%= "Runtime: #{movie['Runtime']}" %></li>
-	<li><%= "Plot: #{movie['Plot']}" %></li>
-</ul>
-<% end %>
+<div class="container">
+	<div class="col-sm-6 col-sm-offset-3 content-box">
+		<h1><%=@select_movie["Title"]%><h1>
+
+
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      <img src="<%= @select_movie["Poster"] %>">
+		      <div class="carousel-caption">
+		      </div>
+		    </div>
+
+		    <div class="item">
+		    	<div class="hidden-info">
+				  	<li><h3>Cast:</h3><%= "#{@select_movie['Actors']}" %></li>
+					<li><h3>Director:</h3><%= "#{@select_movie['Director']}" %></li>
+					<li><h3>Genre:</h3> <%= "#{@select_movie['Genre']}" %></li>
+					<li><h3>Rating:</h3> <%= "#{@select_movie['Rated']}" %></li>
+					<li><h3>Released Year:</h3> <%= "#{@select_movie['Released']}" %></li>
+					<li><h3>Runtime:</h3> <%= "#{@select_movie['Runtime']}" %></li>
+					<li><h3>Plot:</h3> <%= "#{@select_movie['Plot']}" %></li>		      
+				</div>
+		      <div class="carousel-caption"></div>
+		    </div>
+
+		    <div class="item">
+
+		    	<div class="hidden-info">
+		    		<li>
+		    			<br><br>
+				  		<p> If you'd to donate funds to the Simran Library, please feel free to paypal me at <a href="mailto:me@simran.us">me@simran.us</a><p>
+				  	</li>
+				  	<hr>
+				  	<li>
+				  		<p> Feel free to keep exploring my wonderful library! </p>
+				  	</li>
+				  	<li>
+				  		<a class="col-sm-8 col-sm-offset-2 btn btn-info" href="/">Search For Another Movie!</a>
+				  	</li>
+				</div>
+
+		      <div class="carousel-caption"></div>
+		    </div>
+
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
+		</div>
+
+</body>
+</html>
